@@ -1,0 +1,12 @@
+<h1> <%= @gallery.name %> </h1>
+
+  <ul>
+    <li>City: <%= @gallery.city %></li>
+    <li>State: <%= @gallery.state %></li>
+    <li>Zip: <%= @gallery.zip %></li>
+    <% unless @gallery.description.nil? %>
+      <li>Description: <%= @gallery.description %></li>
+    <% end %>
+  </ul>
+
+<%= link_to "back", galleries_path %>

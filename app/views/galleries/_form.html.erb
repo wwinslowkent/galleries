@@ -1,0 +1,43 @@
+<%= form_for (@gallery) do |f| %>
+<% if @gallery.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@gallery.errors.count, "error") %> prohibited this answer from being saved:</h2>
+
+      <ul>
+      <% @gallery.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= f.label :name%>
+    <%= f.text_field :name %>
+  </div>
+
+  <div>
+    <%= f.label :city%>
+    <%= f.text_field :city %>
+  </div>
+
+  <div>
+    <%= f.label :state%>
+    <%= f.select :state, options_for_select(@state_collection) %>
+  </div>
+
+  <div>
+    <%= f.label :zip %>
+    <%= f.text_field :zip %>
+  </div>
+
+  <div>
+    <%= f.label :description %>
+    <%= f.text_field :description %>
+  </div>
+
+  <div>
+    <%= f.submit(value="Submit the cool form for a new rad art gallery") %>
+  </div>
+
+<% end %>
